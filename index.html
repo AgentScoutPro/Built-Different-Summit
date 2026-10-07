@@ -40,8 +40,8 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 [style*="padding: 140px 24px"]{padding:88px 20px!important;min-height:0!important}
 [style*="padding: 72px 24px 64px"]{padding:40px 20px 48px!important;gap:28px!important}
 .bd-keynote{padding:20px!important}
-.bd-sponsors{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
-.bd-sponsors .bd-logo{height:120px!important;padding:16px!important}
+.bd-sponsors{gap:12px!important}
+.bd-sponsors .bd-logo{flex-basis:calc((100% - 12px) / 2)!important;min-width:0!important;height:120px!important;padding:16px!important}
 .bd-speaker div:nth-child(2){font-size:24px!important}
 .bd-count>div{min-width:0!important;flex:1 1 0;padding:12px!important}
 .bd-count>div>div:first-child{font-size:44px!important}
@@ -265,24 +265,27 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 
 <div style="display: flex; flex-direction: column; gap: 16px">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A8A69F">Event sponsors</div>
-<div class="bd-sponsors" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
-<a target="_blank" rel="noopener" href="https://avocadoair.com/" class="bd-reveal bd-lift bd-logo" style="height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<div class="bd-sponsors" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px">
+<a target="_blank" rel="noopener" href="https://avocadoair.com/" class="bd-reveal bd-lift bd-logo" style="flex: 0 1 calc((100% - 48px) / 4); min-width: 220px; height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
 <img src="assets/avocado-air.png" alt="Avocado Air" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
 </a>
-<a target="_blank" rel="noopener" href="https://www.mullins-moving.com/" class="bd-reveal bd-lift bd-logo" style="height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<a target="_blank" rel="noopener" href="https://www.mullins-moving.com/" class="bd-reveal bd-lift bd-logo" style="flex: 0 1 calc((100% - 48px) / 4); min-width: 220px; height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
 <img src="assets/mullins-moving.png" alt="Mullins Moving" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
 </a>
-<a target="_blank" rel="noopener" href="https://copperstategaragepros.com/" class="bd-reveal bd-lift bd-logo" style="height: 190px; padding:28px; background: #FEFEFE; display: flex; align-items: center; justify-content: center">
+<a target="_blank" rel="noopener" href="https://copperstategaragepros.com/" class="bd-reveal bd-lift bd-logo" style="flex: 0 1 calc((100% - 48px) / 4); min-width: 220px; height: 190px; padding:28px; background: #FEFEFE; display: flex; align-items: center; justify-content: center">
 <img src="assets/copper-state.png" alt="Copper State Garage Pros" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
 </a>
-<a target="_blank" rel="noopener" href="https://www.southwestjunkhauling.com/" class="bd-reveal bd-lift bd-logo" style="height: 190px; padding:16px; background: #FFF4D6; display: flex; align-items: center; justify-content: center">
+<a target="_blank" rel="noopener" href="https://www.southwestjunkhauling.com/" class="bd-reveal bd-lift bd-logo" style="flex: 0 1 calc((100% - 48px) / 4); min-width: 220px; height: 190px; padding:16px; background: #FFF4D6; display: flex; align-items: center; justify-content: center">
 <img src="assets/southwest-hauling.png" alt="Southwest Hauling and Junk Removal" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
 </a>
-<a target="_blank" rel="noopener" href="https://www.hardmoneylendersarizona.com/" class="bd-reveal bd-lift bd-logo" style="height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<a target="_blank" rel="noopener" href="https://www.hardmoneylendersarizona.com/" class="bd-reveal bd-lift bd-logo" style="flex: 0 1 calc((100% - 48px) / 4); min-width: 220px; height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
 <img src="assets/mji-capital.png" alt="MJI Capital" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
 </a>
-<a target="_blank" rel="noopener" href="https://wfgtitle.com/arizona/" class="bd-reveal bd-lift bd-logo" style="height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<a target="_blank" rel="noopener" href="https://wfgtitle.com/arizona/" class="bd-reveal bd-lift bd-logo" style="flex: 0 1 calc((100% - 48px) / 4); min-width: 220px; height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
 <img src="assets/wfg.png" alt="WFG Title" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
+</a>
+<a target="_blank" rel="noopener" href="https://trustedproconnect.com" class="bd-reveal bd-lift bd-logo" style="flex: 0 1 calc((100% - 48px) / 4); min-width: 220px; height: 190px; padding: 28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<img src="assets/trusted-pro-connect.png" alt="Trusted Pro Connect" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
 </a>
 </div>
 </div>
