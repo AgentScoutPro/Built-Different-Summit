@@ -27,11 +27,22 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 .bd-anim .bd-reveal{opacity:0;transform:translateY(32px)}
 .bd-anim .bd-reveal.bd-in{opacity:1;transform:none}
 .bd-lift{transition:opacity .7s ease,transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
-.bd-lift:hover,.bd-anim .bd-reveal.bd-in.bd-lift:hover{transform:translateY(-8px);box-shadow:0 18px 36px rgba(0,0,0,.45)}
 .bd-lift img,.bd-photo{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.bd-logo:hover img{transform:scale(1.07)}
-.bd-speaker:hover img{transform:scale(1.03)}
-.bd-photo:hover{transform:scale(1.03) rotate(-.6deg)}
+@media (hover:hover){.bd-lift:hover,.bd-anim .bd-reveal.bd-in.bd-lift:hover{transform:translateY(-8px);box-shadow:0 18px 36px rgba(0,0,0,.45)}.bd-logo:hover img{transform:scale(1.07)}.bd-speaker:hover img{transform:scale(1.03)}.bd-photo:hover{transform:scale(1.03) rotate(-.6deg)}}
+@media (max-width:700px){
+.bd-nav{display:none!important}
+.bd-bar{padding:14px 20px!important}
+footer{flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:4px!important;padding:32px 20px!important}
+[style*="padding: 104px 24px"]{padding:64px 20px!important}
+[style*="padding: 140px 24px"]{padding:88px 20px!important;min-height:0!important}
+[style*="padding: 72px 24px 64px"]{padding:40px 20px 48px!important;gap:28px!important}
+.bd-keynote{padding:20px!important}
+.bd-sponsors{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+.bd-sponsors .bd-logo{height:120px!important;padding:16px!important}
+.bd-speaker div:nth-child(2){font-size:24px!important}
+.bd-count>div{min-width:0!important;flex:1 1 0;padding:12px!important}
+.bd-count>div>div:first-child{font-size:44px!important}
+}
 @media (prefers-reduced-motion:reduce){.bd-reveal,.bd-lift,.bd-lift img,.bd-photo{transition:none}.bd-anim .bd-reveal{opacity:1;transform:none}.bd-lift:hover,.bd-anim .bd-reveal.bd-in.bd-lift:hover,.bd-logo:hover img,.bd-speaker:hover img,.bd-photo:hover{transform:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BusinessEvent","name":"The Built Different Summit","description":"Stop playing small. Get in the room and learn from driven real estate pros, veterans, and first responders committed to leveling up. Friday, November 13, 2026 in Mesa, Arizona.","startDate":"2026-11-13T09:00:00-07:00","endDate":"2026-11-13T16:00:00-07:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"5999 S Backus Mall","address":{"@type":"PostalAddress","streetAddress":"5999 South Backus Mall","addressLocality":"Mesa","addressRegion":"AZ","postalCode":"85212","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"Premier Inspector Group","url":"https://www.inspectwithpremier.com/"},"offers":{"@type":"Offer","url":"https://www.eventbrite.com/e/the-built-different-summit-tickets-2001775543537","availability":"https://schema.org/InStock"},"image":"https://www.tbdsaz2026.com/assets/og.jpg","url":"https://www.tbdsaz2026.com/"}</script>
@@ -40,12 +51,12 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 <div style="background: #030708; color: #F1EEE6; font-family: 'Barlow', sans-serif; font-size: 18px; line-height: 1.55; min-height: 100vh">
 
 <header style="border-bottom: 1px solid #2A2D31">
-<div style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<div style="display: flex; flex-direction: column; gap: 2px">
-<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1">Built Different Summit</div>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #A8A69F">Presented by Premier Inspector Group</div>
+<div class="bd-bar" style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<div class="bd-brand" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1">Built Different Summit</div>
+<div class="bd-brandsub" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #A8A69F">Presented by Premier Inspector Group</div>
 </div>
-<nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<nav class="bd-nav" style="flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
 <a href="#lineup" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0">Lineup</a>
 <a href="#sponsors" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0">Sponsors</a>
 <a href="#location" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0">Location</a>
@@ -55,7 +66,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 </header>
 
 <div id="bd-hero" style="position: relative; overflow: hidden; background: #030708">
-<video muted playsinline id="bd-hero-video" src="assets/flag.mp4" poster="assets/flag-poster.jpg" preload="auto" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<video muted playsinline id="bd-hero-video" poster="assets/flag-poster.jpg" preload="auto" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"><source src="assets/flag-m.mp4" media="(max-width: 700px)" type="video/mp4"><source src="assets/flag.mp4" type="video/mp4"></video>
 <div aria-hidden="true" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(3, 7, 8, 0.62)"></div>
 <section style="position: relative; max-width: 1200px; margin: 0 auto; padding: 72px 24px 64px; display: flex; flex-direction: column; gap: 40px">
 <div style="align-self: flex-start; display: flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid #D9B26A; background: #030708; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #F59155">
@@ -81,7 +92,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 </div>
 <div style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 12px">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A8A69F">Doors open in</div>
-<div style="display: flex; gap: 12px">
+<div class="bd-count" style="display: flex; gap: 12px">
 <div style="min-width: 96px; padding: 14px 16px; border: 1px solid #2A2D31; background: #030708; display: flex; flex-direction: column; gap: 4px">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 56px; line-height: 1"><span id="bd-days">00</span></div>
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A8A69F">Days</div>
@@ -122,7 +133,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 </section>
 
 <div id="bd-room" style="position: relative; overflow: hidden; background: #030708">
-<video muted playsinline id="bd-room-video" src="assets/room.mp4" poster="assets/room-poster.jpg" preload="auto" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<video muted playsinline id="bd-room-video" poster="assets/room-poster.jpg" preload="metadata" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"><source src="assets/room-m.mp4" media="(max-width: 700px)" type="video/mp4"><source src="assets/room.mp4" type="video/mp4"></video>
 <div aria-hidden="true" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(3, 7, 8, 0.62)"></div>
 <section id="about" style="position: relative; max-width: 1200px; min-height: 760px; margin: 0 auto; padding: 140px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 80px">
 <div class="bd-reveal" style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 20px">
@@ -165,7 +176,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 </section>
 
 <section id="bd-plan" style="position: relative; overflow: hidden; background: #030708; color: #F1EEE6">
-<video muted playsinline id="bd-plan-video" src="assets/blueprint.mp4" poster="assets/blueprint-poster.jpg" preload="auto" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<video muted playsinline id="bd-plan-video" poster="assets/blueprint-poster.jpg" preload="metadata" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"><source src="assets/blueprint-m.mp4" media="(max-width: 700px)" type="video/mp4"><source src="assets/blueprint.mp4" type="video/mp4"></video>
 <div aria-hidden="true" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(3, 7, 8, 0.62)"></div>
 <div style="position: relative; max-width: 1200px; min-height: 820px; margin: 0 auto; padding: 140px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 80px">
 <div class="bd-reveal" style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
@@ -192,7 +203,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 </div>
 <h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; text-transform: uppercase">Learn from people who do the work.</h2>
 </div>
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 48px; padding: 32px; border: 1px solid #D9B26A; background: #030708">
+<div class="bd-keynote" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 48px; padding: 32px; border: 1px solid #D9B26A; background: #030708">
 <img src="assets/steve-valentine.jpg" alt="Steve Valentine" class="bd-reveal bd-photo" style="flex: 1 1 280px; min-width: 0; max-width: 400px; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 3px solid #F59155">
 <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #D9B26A">
@@ -204,7 +215,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 <div style="font-size: 18px; color: #A8A69F">The Real Estate Investment Group</div>
 </div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px 16px">
 <div class="bd-reveal bd-lift bd-speaker" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <img src="assets/jason-von-payne.jpg" alt="Jason Von Payne" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 2px solid #F59155">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; text-transform: uppercase">Jason Von Payne</div>
@@ -251,7 +262,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 
 <div style="display: flex; flex-direction: column; gap: 16px">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A8A69F">Event sponsors</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div class="bd-sponsors" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
 <a target="_blank" rel="noopener" href="https://avocadoair.com/" class="bd-reveal bd-lift bd-logo" style="height: 190px; padding:28px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
 <img src="assets/avocado-air.png" alt="Avocado Air" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain">
 </a>
@@ -285,12 +296,12 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 </div>
 <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
 <iframe title="Map of 5999 South Backus Mall, Mesa, Arizona" src="https://www.google.com/maps?q=5999+S+Backus+Mall,+Mesa,+AZ+85212&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="display: block; width: 100%; aspect-ratio: 16 / 13; border: 2px solid #F59155"></iframe>
-<a href="https://maps.app.goo.gl/1kBRueAtzFiC4Wh78" style="font-size: 14px; color: #A8A69F">Open in Google Maps</a>
+<a href="https://maps.app.goo.gl/1kBRueAtzFiC4Wh78" style="align-self: flex-start; padding: 12px 0; font-size: 14px; color: #A8A69F">Open in Google Maps</a>
 </div>
 </section>
 
 <section id="bd-doors" style="position: relative; overflow: hidden; background: #030708; color: #F1EEE6">
-<video muted playsinline id="bd-doors-video" src="assets/doors.mp4" poster="assets/doors-poster.jpg" preload="auto" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<video muted playsinline id="bd-doors-video" poster="assets/doors-poster.jpg" preload="metadata" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"><source src="assets/doors-m.mp4" media="(max-width: 700px)" type="video/mp4"><source src="assets/doors.mp4" type="video/mp4"></video>
 <div aria-hidden="true" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(3, 7, 8, 0.62)"></div>
 <div id="bd-doors-text" style="position: relative; max-width: 1200px; min-height: 820px; margin: 0 auto; padding: 140px 24px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 32px">
 <h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 9vw, 128px); line-height: 0.9; overflow-wrap: break-word; text-transform: uppercase; max-width: 1000px">Your next opportunity may be sitting across the room.</h2>
@@ -304,7 +315,7 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 
 <footer style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 15px; color: #A8A69F">
 <div>The Built Different Summit · Presented by Premier Inspector Group</div>
-<div>Design by <a target="_blank" rel="noopener" href="https://www.cod3ai.com" style="color: #F1EEE6">C0D3AI</a> 2026</div>
+<div>Design by <a target="_blank" rel="noopener" href="https://www.cod3ai.com" style="display: inline-block; padding: 12px 2px; color: #F1EEE6">C0D3AI</a> 2026</div>
 </footer>
 
 </div>
@@ -322,14 +333,34 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
     var v = vids[k];
     if (!v) return;
     v.muted = true; v.playsInline = true; v.pause();
-    // iOS will not buffer a paused video until it has been asked to play once
-    var prime = function () {
-      var p = v.play();
-      if (p && p.then) p.then(function () { v.pause(); }).catch(function () {});
-      window.removeEventListener('touchstart', prime);
-    };
-    window.addEventListener('touchstart', prime, { passive: true, once: true });
   });
+
+  // Phones will not buffer a paused video until it has been asked to play once,
+  // so each video is started and immediately paused: the hero straight away,
+  // the others when their section is about a screen and a half away.
+  function prime(v) {
+    if (!v || v.dataset.primed) return;
+    v.dataset.primed = '1';
+    v.preload = 'auto';
+    var p = v.play();
+    if (p && p.then) p.then(function () { v.pause(); }).catch(function () { delete v.dataset.primed; });
+  }
+  prime(vids.hero);
+  ['touchstart', 'touchend', 'click'].forEach(function (ev) {
+    window.addEventListener(ev, function () { prime(vids.hero); }, { passive: true });
+  });
+  if ('IntersectionObserver' in window) {
+    var near = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        near.unobserve(entry.target);
+        prime(entry.target);
+      });
+    }, { rootMargin: '150% 0px' });
+    [vids.room, vids.plan, vids.doors].forEach(function (v) { if (v) near.observe(v); });
+  } else {
+    [vids.room, vids.plan, vids.doors].forEach(prime);
+  }
 
   function measure() {
     var vh = window.innerHeight || 800, r, start, span;
