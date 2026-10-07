@@ -31,6 +31,9 @@ a{color:#F1EEE6}a:hover{color:#FFFFFF}
 @media (hover:hover){.bd-lift:hover,.bd-anim .bd-reveal.bd-in.bd-lift:hover{transform:translateY(-8px);box-shadow:0 18px 36px rgba(0,0,0,.45)}.bd-logo:hover img{transform:scale(1.07)}.bd-speaker:hover img{transform:scale(1.03)}.bd-photo:hover{transform:scale(1.03) rotate(-.6deg)}}
 @media (max-width:700px){
 .bd-nav{display:none!important}
+.bd-date{font-size:min(12px,3.3vw)!important;letter-spacing:.08em!important;line-height:1.7}
+.bd-d1,.bd-d2{display:block;white-space:nowrap}
+.bd-dsep{display:none}
 .bd-bar{padding:14px 20px!important}
 footer{flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:4px!important;padding:32px 20px!important}
 [style*="padding: 104px 24px"]{padding:64px 20px!important}
@@ -69,9 +72,9 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 <video muted playsinline id="bd-hero-video" poster="assets/flag-poster.jpg" preload="auto" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover"><source src="assets/flag-m.mp4" media="(max-width: 700px)" type="video/mp4"><source src="assets/flag.mp4" type="video/mp4"></video>
 <div aria-hidden="true" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(3, 7, 8, 0.62)"></div>
 <section style="position: relative; max-width: 1200px; margin: 0 auto; padding: 72px 24px 64px; display: flex; flex-direction: column; gap: 40px">
-<div style="align-self: flex-start; display: flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid #D9B26A; background: #030708; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #F59155">
+<div class="bd-date" style="align-self: flex-start; display: flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid #D9B26A; background: #030708; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #F59155">
 <svg width="14" height="14" viewBox="-10 -10 20 20" fill="#D9B26A" aria-hidden="true" style="flex: none"><polygon points="0,-10 2.35,-3.24 9.51,-3.09 3.8,1.24 5.88,8.09 0,4 -5.88,8.09 -3.8,1.24 -9.51,-3.09 -2.35,-3.24"></polygon></svg>
-<span>Friday, November 13, 2026 · 9 AM – 4 PM · Mesa, Arizona</span>
+<span><span class="bd-d1">Friday, November 13, 2026</span><span class="bd-dsep"> · </span><span class="bd-d2">9 AM – 4 PM · Mesa, Arizona</span></span>
 <svg width="14" height="14" viewBox="-10 -10 20 20" fill="#D9B26A" aria-hidden="true" style="flex: none"><polygon points="0,-10 2.35,-3.24 9.51,-3.09 3.8,1.24 5.88,8.09 0,4 -5.88,8.09 -3.8,1.24 -9.51,-3.09 -2.35,-3.24"></polygon></svg>
 </div>
 <h1 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 0.86; letter-spacing: -0.01em; display: flex; flex-direction: column">
