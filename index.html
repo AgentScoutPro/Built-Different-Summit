@@ -40,6 +40,7 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 [style*="padding: 140px 24px"]{padding:88px 20px!important;min-height:0!important}
 [style*="padding: 72px 24px 64px"]{padding:40px 20px 48px!important;gap:28px!important}
 .bd-keynote{padding:20px!important}
+.bd-host-text{align-items:flex-start!important;text-align:left!important}
 .bd-sponsors{gap:12px!important}
 .bd-sponsors .bd-logo{flex-basis:calc((100% - 12px) / 2)!important;min-width:0!important;height:120px!important;padding:16px!important}
 .bd-speaker div:nth-child(2){font-size:24px!important}
@@ -241,9 +242,11 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 <div style="font-size: 15px; color: #A8A69F">Owner, MJI Capital</div>
 </div>
 </div>
-<div class="bd-keynote" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 48px; padding: 32px; border: 1px solid #D9B26A; background: #030708">
-<img src="assets/kelso.jpg" alt="Kelso" loading="lazy" class="bd-reveal bd-photo" style="flex: 1 1 220px; min-width: 0; max-width: 300px; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 3px solid #F59155">
-<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div class="bd-keynote" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items: center; gap: 32px 48px; padding: 32px; border: 1px solid #D9B26A; background: #030708">
+<div class="bd-reveal bd-lift bd-speaker" style="flex: 1 1 220px; min-width: 0; max-width: 300px">
+<img src="assets/kelso.jpg" alt="Kelso" loading="lazy" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 3px solid #F59155">
+</div>
+<div class="bd-host-text" style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 18px">
 <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #D9B26A">
 <svg width="14" height="14" viewBox="-10 -10 20 20" fill="#D9B26A" aria-hidden="true"><polygon points="0,-10 2.35,-3.24 9.51,-3.09 3.8,1.24 5.88,8.09 0,4 -5.88,8.09 -3.8,1.24 -9.51,-3.09 -2.35,-3.24"></polygon></svg>
 <span>Host</span>
