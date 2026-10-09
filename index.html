@@ -41,6 +41,8 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 [style*="padding: 72px 24px 64px"]{padding:40px 20px 48px!important;gap:28px!important}
 .bd-keynote{padding:20px!important}
 .bd-host-text{flex:1 1 100%!important;align-items:flex-start!important;text-align:left!important}
+.bd-host-photo{flex:1 1 100%!important;max-width:400px!important}
+.bd-apply{flex:1 1 100%!important;justify-content:center;padding:0 16px!important;font-size:18px!important}
 .bd-sponsors{gap:12px!important}
 .bd-sponsors .bd-logo{flex-basis:calc((100% - 12px) / 2)!important;min-width:0!important;height:120px!important;padding:16px!important}
 .bd-speaker div:nth-child(2){font-size:24px!important}
@@ -243,7 +245,7 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 </div>
 </div>
 <div class="bd-keynote" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items: flex-start; justify-content: flex-start; gap: 32px 56px; padding: 32px; border: 1px solid #D9B26A; background: #030708">
-<div class="bd-reveal bd-lift bd-speaker" style="flex: 0 1 300px; min-width: 0; max-width: 300px">
+<div class="bd-reveal bd-lift bd-speaker bd-host-photo" style="flex: 0 1 300px; min-width: 0; max-width: 300px">
 <img src="assets/kelso.jpg" alt="Kelso" loading="lazy" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 3px solid #F59155">
 </div>
 <div class="bd-host-text" style="flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 18px">
@@ -327,7 +329,7 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(34px, 4.4vw, 52px); line-height: 0.98; text-transform: uppercase">Interested in becoming a sponsor?</div>
 <p style="margin: 0; max-width: 620px">We have very limited spaces available. If you are interested, you can apply here.</p>
 </div>
-<a href="sponsor.html" style="flex: none; display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 32px; background: #F59155; color: #030708; font-weight: 600; font-size: 20px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em">Apply to sponsor
+<a href="sponsor.html" class="bd-apply" style="flex: none; display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 32px; background: #F59155; color: #030708; font-weight: 600; font-size: 20px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em">Apply to sponsor
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
 </a>
 </div>
