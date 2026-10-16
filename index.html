@@ -55,6 +55,52 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 .bd-count>div>div:first-child{font-size:44px!important}
 }
 @media (prefers-reduced-motion:reduce){.bd-reveal,.bd-lift,.bd-lift img,.bd-photo{transition:none}.bd-anim .bd-reveal{opacity:1;transform:none}.bd-lift:hover,.bd-anim .bd-reveal.bd-in.bd-lift:hover,.bd-logo:hover img,.bd-speaker:hover img,.bd-photo:hover{transform:none}}
+
+.bd-pop{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.bd-pop:focus-visible{outline:2px solid #D9B26A;outline-offset:4px}
+.bd-more{margin-top:2px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#F59155;display:inline-flex;align-items:center;gap:8px}
+.bd-more span{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.bd-pop:hover .bd-more span,.bd-pop:focus-visible .bd-more span{transform:rotate(90deg)}
+.bd-modal{color:#F1EEE6;font-family:'Barlow',sans-serif;font-size:18px;line-height:1.55;position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;pointer-events:none}
+.bd-modal.bd-open{visibility:visible;pointer-events:auto}
+.bd-scrim{position:absolute;inset:0;background:rgba(3,7,8,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .35s ease}
+.bd-open .bd-scrim{opacity:1}
+.bd-card{position:relative;width:100%;max-width:880px;max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow:auto;background:#030708;border:1px solid #D9B26A;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1px rgba(245,145,85,.15);display:flex;flex-wrap:wrap;opacity:0;transform:translateY(40px) scale(.94);transition:opacity .35s ease,transform .5s cubic-bezier(.2,1.1,.3,1)}
+.bd-open .bd-card{opacity:1;transform:none}
+.bd-card::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,#F59155,#D9B26A);transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1) .2s;z-index:2}
+.bd-open .bd-card::before{transform:scaleX(1)}
+.bd-m-photo{flex:0 0 300px;max-width:100%;padding:32px 0 32px 32px}
+.bd-m-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:3px solid #F59155;clip-path:inset(0 0 100% 0);transition:clip-path .8s cubic-bezier(.2,.7,.2,1) .15s}
+.bd-open .bd-m-photo img{clip-path:inset(0 0 0 0)}
+.bd-m-body{flex:1 1 320px;min-width:0;padding:32px;display:flex;flex-direction:column;gap:14px}
+.bd-m-body>*{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.bd-open .bd-m-body>*{opacity:1;transform:none}
+.bd-open .bd-m-body>*:nth-child(1){transition-delay:.18s}
+.bd-open .bd-m-body>*:nth-child(2){transition-delay:.26s}
+.bd-open .bd-m-body>*:nth-child(3){transition-delay:.34s}
+.bd-open .bd-m-body>*:nth-child(4){transition-delay:.42s}
+.bd-open .bd-m-body>*:nth-child(5){transition-delay:.5s}
+.bd-m-kicker{display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#D9B26A}
+.bd-m-name{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(44px,7vw,72px);line-height:.9;text-transform:uppercase;margin:0}
+.bd-m-name b{color:#F59155;font-weight:900}
+.bd-m-tag{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:#D9B26A}
+.bd-m-bio{margin:0;font-size:18px;line-height:1.6;color:#F1EEE6}
+.bd-m-bio a{color:#F59155;text-decoration:underline;text-underline-offset:3px}
+.bd-m-link{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;background:#F59155;color:#030708!important;font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.bd-m-link:hover{background:#FFA86F;transform:translateX(4px)}
+.bd-m-close{position:absolute;right:12px;top:12px;z-index:3;width:44px;height:44px;border:1px solid #D9B26A;background:rgba(3,7,8,.85);color:#F1EEE6;font-size:26px;line-height:1;cursor:pointer;transition:transform .35s cubic-bezier(.2,.7,.2,1),background .25s ease}
+.bd-m-close:hover{background:#F59155;color:#030708;transform:rotate(90deg)}
+body.bd-lock{overflow:hidden}
+@media (max-width:700px){
+.bd-modal{align-items:flex-end;padding:0}
+.bd-card{max-height:92vh;max-height:92dvh;border-left:0;border-right:0;border-bottom:0;transform:translateY(100%)}
+.bd-m-photo{flex:1 1 100%;padding:20px 20px 0;max-width:none}
+.bd-m-photo img{aspect-ratio:1/1;object-position:center 20%}
+.bd-m-body{padding:20px 20px 28px}
+.bd-m-bio{font-size:17px}
+.bd-m-link{align-self:stretch;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.bd-scrim,.bd-card,.bd-card::before,.bd-m-photo img,.bd-m-body>*,.bd-more span,.bd-m-close,.bd-m-link{transition:none!important}.bd-open .bd-card{transform:none}.bd-m-photo img{clip-path:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BusinessEvent","name":"The Built Different Summit","description":"Stop playing small. Get in the room and learn from driven real estate pros, veterans, and first responders committed to leveling up. Friday, November 13, 2026 in Mesa, Arizona.","startDate":"2026-11-13T09:00:00-07:00","endDate":"2026-11-13T16:00:00-07:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Cooley Ballroom, Arizona State University Polytechnic Campus","address":{"@type":"PostalAddress","streetAddress":"5999 South Backus Mall","addressLocality":"Mesa","addressRegion":"AZ","postalCode":"85212","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"Premier Inspector Group","url":"https://www.inspectwithpremier.com/"},"offers":{"@type":"Offer","url":"https://www.eventbrite.com/e/the-built-different-summit-tickets-2001775543537","availability":"https://schema.org/InStock"},"image":"https://www.tbdsaz2026.com/assets/og.jpg","url":"https://www.tbdsaz2026.com/"}</script>
 </head>
@@ -215,7 +261,7 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 </div>
 <h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; text-transform: uppercase">Learn from people who do the work.</h2>
 </div>
-<div class="bd-keynote" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 48px; padding: 32px; border: 1px solid #D9B26A; background: #030708">
+<div class="bd-keynote bd-pop" data-speaker="steve" role="button" tabindex="0" aria-haspopup="dialog" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 48px; padding: 32px; border: 1px solid #D9B26A; background: #030708; cursor: pointer">
 <img src="assets/steve-valentine.jpg" alt="Steve Valentine" class="bd-reveal bd-photo" style="flex: 1 1 280px; min-width: 0; max-width: 400px; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 3px solid #F59155">
 <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #D9B26A">
@@ -225,28 +271,33 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
 </div>
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(60px, 9vw, 120px); line-height: 0.88; text-transform: uppercase">Steve Valentine</div>
 <div style="font-size: 18px; color: #A8A69F">The Real Estate Investment Group</div>
+<div class="bd-more" aria-hidden="true">View bio <span>+</span></div>
 </div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px 16px">
-<div class="bd-reveal bd-lift bd-speaker" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div class="bd-reveal bd-lift bd-speaker bd-pop" data-speaker="jason" role="button" tabindex="0" aria-haspopup="dialog" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <img src="assets/jason-von-payne.jpg" alt="Jason Von Payne" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 2px solid #F59155">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; text-transform: uppercase">Jason Von Payne</div>
 <div style="font-size: 15px; color: #A8A69F">Owner, State 48 Roofing, Avocado Air, Scale Mastermind</div>
+<div class="bd-more" aria-hidden="true">View bio <span>+</span></div>
 </div>
-<div class="bd-reveal bd-lift bd-speaker" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div class="bd-reveal bd-lift bd-speaker bd-pop" data-speaker="nicholas" role="button" tabindex="0" aria-haspopup="dialog" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <img src="assets/nicholas-trevillian.jpg" alt="Nicholas Trevillian" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 2px solid #F59155">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; text-transform: uppercase">Nicholas Trevillian</div>
 <div style="font-size: 15px; color: #A8A69F">Owner, Triumphant Coaching. Former top-producing Realtor</div>
+<div class="bd-more" aria-hidden="true">View bio <span>+</span></div>
 </div>
-<div class="bd-reveal bd-lift bd-speaker" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div class="bd-reveal bd-lift bd-speaker bd-pop" data-speaker="thomas" role="button" tabindex="0" aria-haspopup="dialog" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <img src="assets/thomas-white.jpg" alt="Thomas White" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 2px solid #F59155">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; text-transform: uppercase">Thomas White</div>
 <div style="font-size: 15px; color: #A8A69F">Owner and veteran, Premier Inspector Group</div>
+<div class="bd-more" aria-hidden="true">View bio <span>+</span></div>
 </div>
-<div class="bd-reveal bd-lift bd-speaker" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div class="bd-reveal bd-lift bd-speaker bd-pop" data-speaker="michael" role="button" tabindex="0" aria-haspopup="dialog" style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <img src="assets/michael-iuculano.jpg" alt="Michael Iuculano" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 2px solid #F59155">
 <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; text-transform: uppercase">Michael Iuculano</div>
 <div style="font-size: 15px; color: #A8A69F">Owner, MJI Capital</div>
+<div class="bd-more" aria-hidden="true">View bio <span>+</span></div>
 </div>
 </div>
 <div class="bd-keynote bd-host" style="display: flex; flex-direction: row-reverse; flex-wrap: nowrap; align-items: flex-start; justify-content: flex-start; gap: 32px 56px; padding: 32px; border: 1px solid #D9B26A; background: #030708">
@@ -492,6 +543,69 @@ footer{flex-direction:column!important;align-items:center!important;justify-cont
   }
   countdown();
   setInterval(countdown, 30000);
+})();
+</script>
+
+<div class="bd-modal" id="bd-modal" aria-hidden="true">
+<div class="bd-scrim" data-close></div>
+<div class="bd-card" role="dialog" aria-modal="true" aria-labelledby="bd-m-name">
+<button class="bd-m-close" type="button" aria-label="Close" data-close>&times;</button>
+<div class="bd-m-photo"><img id="bd-m-img" src="" alt=""></div>
+<div class="bd-m-body">
+<div class="bd-m-kicker"><svg width="14" height="14" viewBox="-10 -10 20 20" fill="#D9B26A" aria-hidden="true"><polygon points="0,-10 2.35,-3.24 9.51,-3.09 3.8,1.24 5.88,8.09 0,4 -5.88,8.09 -3.8,1.24 -9.51,-3.09 -2.35,-3.24"></polygon></svg><span id="bd-m-role"></span></div>
+<h3 class="bd-m-name" id="bd-m-name"></h3>
+<div class="bd-m-tag" id="bd-m-tag"></div>
+<p class="bd-m-bio" id="bd-m-bio"></p>
+<a class="bd-m-link" id="bd-m-link" target="_blank" rel="noopener"></a>
+</div>
+</div>
+</div>
+<script>
+(function(){
+var D={
+steve:{img:"assets/steve-valentine.jpg",role:"Keynote",first:"Steve",last:"Valentine",tag:"Discipline builds empires.",
+bio:'Our keynote for The Built Different Summit is <a href="https://www.instagram.com/stevedvalentine/" target="_blank" rel="noopener">Steve D Valentine | Real Estate and Identity Mentor</a>. He has 27+ years in real estate, 1,000+ flips, and nearly $50M in portfolio assets. He\u2019s a Top 1% agent, the leader of The RIG.',
+link:"https://www.instagram.com/stevedvalentine/",cta:"Follow on Instagram"},
+jason:{img:"assets/jason-von-payne.jpg",role:"Featured speaker",first:"Jason",last:"Payne",tag:"Built to scale.",
+bio:'Next up is <a href="https://www.instagram.com/jasontheroofer/" target="_blank" rel="noopener">Jason Von Payne</a>. He grew State 48 Roofing past $10M with zero outside funding and built an 8-figure brand on organic social media. He\u2019s also the founder of The Scale Mastermind.',
+link:"https://www.instagram.com/jasontheroofer/",cta:"Follow on Instagram"},
+nicholas:{img:"assets/nicholas-trevillian.jpg",role:"Featured speaker",first:"Nicholas",last:"Trevillian",tag:"Build the life. Not just the business.",
+bio:'Featured speaker <a href="https://www.instagram.com/nicholas_trevillian/" target="_blank" rel="noopener">Nicholas Trevillian</a> is the founder of The Triumphant Entrepreneur, author of SCALE, and host of the TRIUMPHANT Podcast. He\u2019s a former Top 5% Phoenix agent and built social media and Meta ads systems that added millions for small businesses.',
+link:"https://www.instagram.com/nicholas_trevillian/",cta:"Follow on Instagram"},
+thomas:{img:"assets/thomas-white.jpg",role:"Featured speaker",first:"Thomas",last:"White",tag:"The Tactical Agent.",
+bio:'<a href="https://www.facebook.com/baseball61213" target="_blank" rel="noopener">Thomas White</a>, owner of Premier Inspector Group. A U.S. Army veteran who served as an Airborne ISR Sensor Operator with 400+ combat flight hours and a decade supporting JSOC aviation, post-service. Now a Certified Master Inspector. The hard truths on what mission-ready discipline looks like in business.',
+link:"https://www.facebook.com/baseball61213",cta:"Connect on Facebook"},
+michael:{img:"assets/michael-iuculano.jpg",role:"Featured speaker",first:"Michael",last:"Iuculano",tag:"The hard money advantage.",
+bio:'Featured speaker <a href="https://www.instagram.com/hardmoneymichael/" target="_blank" rel="noopener">Hard Money Michael Iuculano</a> is the founder and CEO of MJI Capital, known as the \u201cNo Excuses Lender.\u201d He has 24+ years in lending and $2.3B+ funded across 3,300+ loans, and he ranks in the top 0.5% of lenders nationwide.',
+link:"https://www.instagram.com/hardmoneymichael/",cta:"Follow on Instagram"}
+};
+var m=document.getElementById('bd-modal'),last=null;
+function $(i){return document.getElementById(i)}
+function open(k,from){
+var d=D[k];if(!d)return;last=from;
+$('bd-m-img').src=d.img;$('bd-m-img').alt=d.first+' '+d.last;
+$('bd-m-role').textContent=d.role;
+$('bd-m-name').innerHTML=d.first+' <b>'+d.last+'</b>';
+$('bd-m-tag').textContent=d.tag;$('bd-m-bio').innerHTML=d.bio;
+var l=$('bd-m-link');l.href=d.link;l.textContent=d.cta+' \u2192';
+m.setAttribute('aria-hidden','false');m.classList.add('bd-open');document.body.classList.add('bd-lock');
+setTimeout(function(){m.querySelector('.bd-m-close').focus({preventScroll:true})},50);
+}
+function close(){
+m.classList.remove('bd-open');m.setAttribute('aria-hidden','true');document.body.classList.remove('bd-lock');
+if(last)last.focus({preventScroll:true});
+}
+document.querySelectorAll('[data-speaker]').forEach(function(el){
+el.addEventListener('click',function(e){if(e.target.closest('a'))return;open(el.dataset.speaker,el)});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(el.dataset.speaker,el)}});
+});
+m.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))close()});
+document.addEventListener('keydown',function(e){
+if(!m.classList.contains('bd-open'))return;
+if(e.key==='Escape')close();
+if(e.key==='Tab'){var f=m.querySelectorAll('a[href],button');var a=f[0],z=f[f.length-1];
+if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+});
 })();
 </script>
 </body>
