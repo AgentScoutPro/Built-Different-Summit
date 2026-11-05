@@ -101,6 +101,42 @@ body.bd-lock{overflow:hidden}
 .bd-m-link{align-self:stretch;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){.bd-scrim,.bd-card,.bd-card::before,.bd-m-photo img,.bd-m-body>*,.bd-more span,.bd-m-close,.bd-m-link{transition:none!important}.bd-open .bd-card{transform:none}.bd-m-photo img{clip-path:none}}
+
+/* free field guide: section + gated download */
+.bd-guide-cover{flex:0 1 340px;min-width:0;max-width:340px;display:block;transform:rotate(-2.5deg);box-shadow:0 30px 70px rgba(0,0,0,.65),0 0 0 1px #2A2D31;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.bd-guide-cover img{display:block;width:100%;height:auto}
+@media (hover:hover){.bd-guide-cover:hover{transform:rotate(0) translateY(-6px)}}
+.bd-guide-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.bd-guide-list li{display:flex;gap:12px;align-items:flex-start}
+.bd-guide-list li::before{content:"";flex:none;width:10px;height:10px;margin-top:9px;background:#F59155;transform:rotate(45deg)}
+.bd-guide-btn{display:inline-flex;align-items:center;gap:12px;min-height:60px;padding:0 32px;background:#F59155;color:#030708!important;border:0;font-family:'Barlow',sans-serif;font-weight:600;font-size:20px;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:background .25s ease,transform .25s ease}
+.bd-guide-btn:hover{background:#FFA86F;transform:translateX(4px)}
+.bd-guide-btn:disabled{opacity:.6;cursor:progress;transform:none}
+.bd-g-card{max-width:560px}
+.bd-g-body{flex:1 1 100%;padding:36px 32px 32px;display:flex;flex-direction:column;gap:16px}
+.bd-g-title{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(38px,6vw,56px);line-height:.92;text-transform:uppercase;margin:0}
+.bd-g-title b{color:#F59155;font-weight:900}
+.bd-g-form{display:flex;flex-direction:column;gap:14px;margin:0}
+.bd-g-field{display:flex;flex-direction:column;gap:6px}
+.bd-g-field label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#D9B26A}
+.bd-g-field input{width:100%;min-height:52px;padding:0 16px;background:#0B0F11;border:1px solid #3A3D42;color:#F1EEE6;font-family:'Barlow',sans-serif;font-size:18px;border-radius:0;-webkit-appearance:none;appearance:none}
+.bd-g-field input:focus{outline:none;border-color:#F59155;box-shadow:0 0 0 1px #F59155}
+.bd-g-field input[aria-invalid="true"]{border-color:#FF7A6B}
+.bd-g-consent{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:#A8A69F;cursor:pointer}
+.bd-g-consent input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:#F59155}
+.bd-g-err{min-height:0;margin:0;font-size:15px;color:#FF9A8C}
+.bd-g-err:empty{display:none}
+.bd-g-fine{margin:0;font-size:13px;color:#7E7C76}
+.bd-g-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.bd-g-done{display:none;flex-direction:column;gap:16px}
+.bd-g-card.bd-g-ok .bd-g-form{display:none}
+.bd-g-card.bd-g-ok .bd-g-done{display:flex}
+@media (max-width:700px){
+.bd-guide-cover{flex:1 1 100%;max-width:260px;margin:0 auto}
+.bd-guide-btn{align-self:stretch;justify-content:center;font-size:18px;padding:0 16px}
+.bd-g-body{padding:28px 20px 32px}
+}
+@media (prefers-reduced-motion:reduce){.bd-guide-cover,.bd-guide-btn{transition:none}.bd-guide-cover:hover{transform:rotate(-2.5deg)}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BusinessEvent","name":"The Built Different Summit","description":"Stop playing small. Get in the room and learn from driven real estate pros, veterans, and first responders committed to leveling up. Friday, November 13, 2026 in Mesa, Arizona.","startDate":"2026-11-13T09:00:00-07:00","endDate":"2026-11-13T16:00:00-07:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Cooley Ballroom, Arizona State University Polytechnic Campus","address":{"@type":"PostalAddress","streetAddress":"5999 South Backus Mall","addressLocality":"Mesa","addressRegion":"AZ","postalCode":"85212","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"Premier Inspector Group","url":"https://www.inspectwithpremier.com/"},"offers":{"@type":"Offer","url":"https://www.eventbrite.com/e/the-built-different-summit-tickets-2001775543537","availability":"https://schema.org/InStock"},"image":"https://www.tbdsaz2026.com/assets/og.jpg","url":"https://www.tbdsaz2026.com/"}</script>
 </head>
@@ -115,6 +151,7 @@ body.bd-lock{overflow:hidden}
 </div>
 <nav class="bd-nav" style="flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
 <a href="#lineup" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0">Lineup</a>
+<a href="#guide" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0">Free guide</a>
 <a href="#sponsors" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0">Sponsors</a>
 <a href="#location" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0">Location</a>
 <a href="sponsor.html" style="font-size: 16px; font-weight: 500; text-decoration: none; padding: 12px 0; color: #D9B26A">Become a sponsor</a>
@@ -315,6 +352,34 @@ body.bd-lock{overflow:hidden}
 <div style="font-size: 22px; font-weight: 500; color: #F59155; text-wrap: balance">God’s Ministries, Trusted Pro Connect</div>
 <div style="font-size: 18px; color: #A8A69F">Your Kingdom Connector</div>
 </div>
+</div>
+</div>
+</section>
+
+<section id="guide" style="border-top: 1px solid #2A2D31; background: #030708">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px 80px">
+<a href="#guide" class="bd-reveal bd-guide-cover" data-guide-open aria-label="Get the free guide: The Tactical Agent Advantage">
+<img src="assets/tactical-agent-cover.jpg" alt="Cover of The Tactical Agent Advantage field guide by Thomas White, Premier Inspector Group" width="935" height="1210" loading="lazy">
+</a>
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #F59155">
+<svg width="12" height="12" viewBox="-10 -10 20 20" fill="#D9B26A" aria-hidden="true"><polygon points="0,-10 2.35,-3.24 9.51,-3.09 3.8,1.24 5.88,8.09 0,4 -5.88,8.09 -3.8,1.24 -9.51,-3.09 -2.35,-3.24"></polygon></svg>
+<span>Free field guide for real estate agents</span>
+<svg width="12" height="12" viewBox="-10 -10 20 20" fill="#D9B26A" aria-hidden="true"><polygon points="0,-10 2.35,-3.24 9.51,-3.09 3.8,1.24 5.88,8.09 0,4 -5.88,8.09 -3.8,1.24 -9.51,-3.09 -2.35,-3.24"></polygon></svg>
+</div>
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; text-transform: uppercase">The Tactical Agent <span style="color: #F59155">Advantage.</span></h2>
+<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.04em; text-transform: uppercase; color: #D9B26A">7 inspection secrets every real estate agent should know</div>
+<p style="margin: 0; max-width: 620px">A field guide from Thomas White and Premier Inspector Group for better-prepared clients, smarter property decisions, and fewer last-minute surprises.</p>
+<ul class="bd-guide-list">
+<li>How to set expectations before the report does</li>
+<li>Why the strongest listing strategy starts before the buyer&rsquo;s inspection</li>
+<li>Repair requests and completion proof that hold up at closing</li>
+<li>Scripts you can use tomorrow, plus three printable field tools</li>
+</ul>
+<button type="button" class="bd-guide-btn" data-guide-open style="align-self: flex-start">Get the free guide
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M12 4v13M6 11l6 6 6-6M4 21h16"></path></svg>
+</button>
+<div style="font-size: 15px; color: #A8A69F">By Thomas White · Presenting sponsor, Premier Inspector Group</div>
 </div>
 </div>
 </section>
@@ -576,7 +641,7 @@ nicholas:{img:"assets/nicholas-trevillian.jpg",role:"Featured speaker",first:"Ni
 bio:'Featured speaker <a href="https://www.instagram.com/nicholas_trevillian/" target="_blank" rel="noopener">Nicholas Trevillian</a> is the founder of The Triumphant Entrepreneur, author of SCALE, and host of the TRIUMPHANT Podcast. He\u2019s a former Top 5% Phoenix agent and built social media and Meta ads systems that added millions for small businesses.',
 link:"https://www.instagram.com/nicholas_trevillian/",cta:"Follow on Instagram"},
 thomas:{img:"assets/thomas-white.jpg",role:"Featured speaker",first:"Thomas",last:"White",tag:"The Tactical Agent.",
-bio:'<a href="https://www.facebook.com/baseball61213" target="_blank" rel="noopener">Thomas White</a>, owner of Premier Inspector Group. A U.S. Army veteran who served as an Airborne ISR Sensor Operator with 400+ combat flight hours and a decade supporting JSOC aviation, post-service. Now a Certified Master Inspector. The hard truths on what mission-ready discipline looks like in business.',
+bio:'<a href="https://www.facebook.com/baseball61213" target="_blank" rel="noopener">Thomas White</a>, owner of Premier Inspector Group. A U.S. Army veteran who served as an Airborne ISR Sensor Operator with 400+ combat flight hours and a decade supporting JSOC aviation, post-service. Now a Certified Master Inspector. The hard truths on what mission-ready discipline looks like in business. <a href="#guide" data-guide-open>Get his free field guide, The Tactical Agent Advantage.</a>',
 link:"https://www.facebook.com/baseball61213",cta:"Connect on Facebook"},
 michael:{img:"assets/michael-iuculano.jpg",role:"Featured speaker",first:"Michael",last:"Iuculano",tag:"The hard money advantage.",
 bio:'Featured speaker <a href="https://www.instagram.com/hardmoneymichael/" target="_blank" rel="noopener">Hard Money Michael Iuculano</a> is the founder and CEO of MJI Capital, known as the \u201cNo Excuses Lender.\u201d He has 24+ years in lending and $2.3B+ funded across 3,300+ loans, and he ranks in the top 0.5% of lenders nationwide.',
@@ -608,6 +673,117 @@ if(!m.classList.contains('bd-open'))return;
 if(e.key==='Escape')close();
 if(e.key==='Tab'){var f=m.querySelectorAll('a[href],button');var a=f[0],z=f[f.length-1];
 if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+});
+})();
+</script>
+
+<div class="bd-modal" id="bd-guide-modal" aria-hidden="true">
+<div class="bd-scrim" data-gclose></div>
+<div class="bd-card bd-g-card" role="dialog" aria-modal="true" aria-labelledby="bd-g-title">
+<button class="bd-m-close" type="button" aria-label="Close" data-gclose>&times;</button>
+<div class="bd-g-body">
+<div class="bd-m-kicker" style="opacity:1;transform:none"><svg width="14" height="14" viewBox="-10 -10 20 20" fill="#D9B26A" aria-hidden="true"><polygon points="0,-10 2.35,-3.24 9.51,-3.09 3.8,1.24 5.88,8.09 0,4 -5.88,8.09 -3.8,1.24 -9.51,-3.09 -2.35,-3.24"></polygon></svg><span>Free field guide</span></div>
+<h3 class="bd-g-title" id="bd-g-title">The Tactical Agent <b>Advantage</b></h3>
+<form class="bd-g-form" id="bd-g-form" novalidate>
+<p style="margin:0;color:#A8A69F">Enter your details and your download starts right away.</p>
+<div class="bd-g-field"><label for="bd-g-name">Full name</label><input id="bd-g-name" name="name" type="text" autocomplete="name" required></div>
+<div class="bd-g-field"><label for="bd-g-phone">Phone</label><input id="bd-g-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+<div class="bd-g-field"><label for="bd-g-email">Email</label><input id="bd-g-email" name="email" type="email" inputmode="email" autocomplete="email" required></div>
+<div class="bd-g-hp" aria-hidden="true"><label for="bd-g-company">Company</label><input id="bd-g-company" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+<label class="bd-g-consent"><input id="bd-g-consent" type="checkbox" required><span>I agree to be contacted by Premier Inspector Group by phone, text or email about this guide and their services.</span></label>
+<p class="bd-g-err" id="bd-g-err" role="alert"></p>
+<button type="submit" class="bd-guide-btn" id="bd-g-submit" style="justify-content:center">Download the guide
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M12 4v13M6 11l6 6 6-6M4 21h16"></path></svg>
+</button>
+<p class="bd-g-fine">Your details go only to Premier Inspector Group. No spam.</p>
+</form>
+<div class="bd-g-done" id="bd-g-done">
+<p style="margin:0">You&rsquo;re in. Your download should start on its own. If it doesn&rsquo;t, tap below.</p>
+<a class="bd-guide-btn" id="bd-g-dl" href="assets/tactical-agent-advantage.pdf" download="The-Tactical-Agent-Advantage-Premier-Inspector-Group.pdf" style="justify-content:center">Download the PDF
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M12 4v13M6 11l6 6 6-6M4 21h16"></path></svg>
+</a>
+<p style="margin:0;font-size:16px;color:#A8A69F">See Thomas live on November 13. <a target="_blank" rel="noopener" href="https://www.eventbrite.com/e/the-built-different-summit-tickets-2001775543537?aff=guide" style="color:#F59155">Get your ticket &rarr;</a></p>
+</div>
+</div>
+</div>
+</div>
+<script>
+(function(){
+// Leads are emailed to Thomas through FormSubmit (formsubmit.co). The first
+// submission sends Thomas a one-time "Activate Form" email; leads arrive after he clicks it.
+var LEAD_URL='https://formsubmit.co/ajax/thomas@inspectwithpremier.com';
+var KEY='bd_guide_ok';
+var gm=document.getElementById('bd-guide-modal'),card=gm.querySelector('.bd-g-card'),form=document.getElementById('bd-g-form'),
+err=document.getElementById('bd-g-err'),btn=document.getElementById('bd-g-submit'),dl=document.getElementById('bd-g-dl'),last=null;
+function $(i){return document.getElementById(i)}
+function remembered(){try{return localStorage.getItem(KEY)==='1'}catch(e){return false}}
+function remember(){try{localStorage.setItem(KEY,'1')}catch(e){}}
+function unlock(auto){
+card.classList.add('bd-g-ok');
+setTimeout(function(){dl.focus({preventScroll:true})},60);
+if(auto){try{var a=document.createElement('a');a.href=dl.href;a.download=dl.getAttribute('download');document.body.appendChild(a);a.click();a.remove()}catch(e){}}
+}
+function open(from){
+last=from||null;
+var bio=document.getElementById('bd-modal');
+if(bio&&bio.classList.contains('bd-open')){bio.classList.remove('bd-open');bio.setAttribute('aria-hidden','true')}
+if(remembered())card.classList.add('bd-g-ok');
+gm.setAttribute('aria-hidden','false');gm.classList.add('bd-open');document.body.classList.add('bd-lock');
+setTimeout(function(){(card.classList.contains('bd-g-ok')?dl:$('bd-g-name')).focus({preventScroll:true})},80);
+}
+function close(){
+gm.classList.remove('bd-open');gm.setAttribute('aria-hidden','true');document.body.classList.remove('bd-lock');
+if(last&&document.contains(last)&&last.offsetParent!==null)last.focus({preventScroll:true});
+}
+document.addEventListener('click',function(e){
+var t=e.target.closest('[data-guide-open]');if(!t)return;
+e.preventDefault();e.stopPropagation();open(t);
+},true);
+gm.addEventListener('click',function(e){if(e.target.hasAttribute('data-gclose'))close()});
+document.addEventListener('keydown',function(e){
+if(!gm.classList.contains('bd-open'))return;
+if(e.key==='Escape')close();
+if(e.key==='Tab'){var f=Array.prototype.filter.call(gm.querySelectorAll('a[href],button,input:not([tabindex="-1"])'),function(x){return x.offsetParent!==null});
+var a=f[0],z=f[f.length-1];
+if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+});
+function bad(el,msg){el.setAttribute('aria-invalid','true');err.textContent=msg;el.focus();return false}
+function valid(){
+['bd-g-name','bd-g-phone','bd-g-email'].forEach(function(i){$(i).removeAttribute('aria-invalid')});err.textContent='';
+var n=$('bd-g-name'),p=$('bd-g-phone'),m=$('bd-g-email');
+if(n.value.trim().length<2)return bad(n,'Please enter your name.');
+if(p.value.replace(/\D/g,'').length<10)return bad(p,'Please enter a phone number with area code.');
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m.value.trim()))return bad(m,'Please enter a valid email address.');
+if(!$('bd-g-consent').checked){err.textContent='Please check the box so Premier can reach you.';$('bd-g-consent').focus();return false}
+return true;
+}
+form.addEventListener('submit',function(e){
+e.preventDefault();
+if(!valid())return;
+var name=$('bd-g-name').value.trim(),phone=$('bd-g-phone').value.trim(),email=$('bd-g-email').value.trim();
+if($('bd-g-company').value){remember();unlock(true);return}
+btn.disabled=true;btn.firstChild.textContent='Sending… ';
+var payload={
+'Name':name,'Phone':phone,'Email':email,
+'Consent to contact':'Yes',
+'Downloaded':'The Tactical Agent Advantage (PDF)',
+'Source':'tbdsaz2026.com - Built Different Summit landing page',
+'Submitted':new Date().toLocaleString('en-US',{timeZone:'America/Phoenix'})+' (Arizona time)',
+_subject:'New guide download: '+name,
+_replyto:email,
+_template:'table',
+_captcha:'false'
+};
+var ctl=('AbortController' in window)?new AbortController():null;
+var timer=setTimeout(function(){if(ctl)ctl.abort()},12000);
+fetch(LEAD_URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:ctl?ctl.signal:undefined})
+.then(function(r){return r.json().catch(function(){return {}})})
+.then(function(res){if(String(res.success)!=='true'&&window.console)console.warn('Guide lead not delivered:',res&&res.message)})
+.catch(function(x){if(window.console)console.warn('Guide lead request failed:',x)})
+.then(function(){
+clearTimeout(timer);btn.disabled=false;btn.firstChild.textContent='Download the guide ';
+remember();unlock(true);
+});
 });
 })();
 </script>
